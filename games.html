@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>Games: Boraq Abdulmajeed</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Games: Boraq Abdulmajeed">
+<meta property="og:description" content="Small games for the Playdate, a handheld console with a crank.">
+<meta property="og:image" content="https://bojacks1.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Small games for the Playdate, a handheld console with a crank.">
+</head>
+<body class="games-page">
+<header class="nav">
+  <a class="brand" href="index.html">Boraq Abdulmajeed</a>
+  <nav><ul>
+    <li><a href="index.html#work" data-n="work">Work</a></li>
+    <li><a href="games.html" data-n="games" class="here">Games</a></li>
+    <li><a href="about.html" data-n="about">About</a></li>
+    <li><a href="about.html#contact">Contact</a></li>
+  </ul></nav>
+</header>
+<section class="block" style="padding-top:150px">
+  <p class="eyebrow">Games</p>
+  <h2 class="title">Made for a crank.</h2>
+  <p style="color:var(--ink-dim);max-width:40em;margin-top:18px">
+    The <a href="https://play.date" rel="noopener" style="border-bottom:1px solid var(--line)">Playdate</a> is a pocket-sized console with a handle on its side.
+    These are four games I made for it, written in Lua and C. Browser versions are in the works, so you will be able to try them right here.
+  </p>
+
+  <!-- ================= CRANKBLADE ================= -->
+  <article class="game" id="crankblade">
+    <div class="console">
+      <div class="screen"><img class="shot" src="crankblade-dash.gif" alt="A looping clip of CRANKBLADE: a perfect parry, then the hero dashes straight through his opponent"></div>
+      <div class="pad"><span class="dpad"></span><span class="ab"><i></i><i></i></span></div>
+      <span class="crank"></span>
+    </div>
+    <div>
+      <h3>CRANKBLADE</h3>
+      <span class="tag pixel">Playdate · Lua</span>
+      <p>A one-on-one samurai duel. The crank is your sword: turn it to guard high, middle or low, then parry or strike with the buttons.</p>
+      <p>Six opponents, each harder than the last, a perfect-parry slow motion, and a story about a lord hunting his father's killers.</p>
+      <ul class="controls">
+        <li><b>Crank</b> aims your sword: up, forward or down</li>
+        <li><b>B</b> parries &nbsp;·&nbsp; <b>A</b> strikes</li>
+      </ul>
+      <span class="status pixel">Play in your browser: coming soon</span>
+    </div>
+  </article>
+
+  <!-- ================= CRANK FM ================= -->
+  <article class="game" id="crank-fm">
+    <div class="console">
+      <div class="screen"><img class="shot" src="crankfm-beats.gif" alt="A looping clip of Crank FM: the speaker grille pulses to the beat while the song title scrolls"></div>
+      <div class="pad"><span class="dpad"></span><span class="ab"><i></i><i></i></span></div>
+      <span class="crank"></span>
+    </div>
+    <div>
+      <h3>Crank FM</h3>
+      <span class="tag pixel">Playdate · C</span>
+      <p>Internet radio, tuned with the crank. Turn the dial through the static and a station crackles into focus, with the song title on a little radio-shaped screen.</p>
+      <p>Six bands of six stations, each shown as a key on the front. Streams come from SomaFM.</p>
+      <ul class="controls">
+        <li><b>Crank</b> turns the dial</li>
+        <li><b>Left / Right</b> jump to a station &nbsp;·&nbsp; <b>B</b> changes band</li>
+      </ul>
+      <span class="status pixel">Runs on a real Playdate</span>
+    </div>
+  </article>
+
+  <!-- ================= VINYL ================= -->
+  <article class="game" id="vinyl">
+    <div class="console">
+      <div class="screen"><img class="shot" src="vinyl.gif" alt="A looping clip of Vinyl: a record slides onto the platter, the needle drops and the record spins up"></div>
+      <div class="pad"><span class="dpad"></span><span class="ab"><i></i><i></i></span></div>
+      <span class="crank"></span>
+    </div>
+    <div>
+      <h3>Vinyl</h3>
+      <span class="tag pixel">Playdate · Lua</span>
+      <p>A turntable in your hands. Flip through a crate of records, drop the needle, and use the crank as your hand on the platter: push it, drag it, scratch it.</p>
+      <p>The platter has real momentum, so the music speeds up, slows down and runs backwards as you turn.</p>
+      <ul class="controls">
+        <li><b>Crank</b> nudges and scratches the record</li>
+        <li><b>A</b> starts and stops the motor &nbsp;·&nbsp; <b>B</b> back to the crate</li>
+      </ul>
+      <span class="status pixel">Runs on a real Playdate</span>
+    </div>
+  </article>
+
+  <!-- ================= MR COOK ================= -->
+  <article class="game" id="mr-cook">
+    <div class="console">
+      <div class="screen"><div class="soon-shot">Screenshot<br>coming soon</div></div>
+      <div class="pad"><span class="dpad"></span><span class="ab"><i></i><i></i></span></div>
+      <span class="crank"></span>
+    </div>
+    <div>
+      <h3>Mr Cook</h3>
+      <span class="tag pixel">Playdate · Lua</span>
+      <p>A calm cooking game with no score, no timer and no way to fail. The crank is the knife and the kettle; tilting the console slides things around the board.</p>
+      <p>The first recipe is a bowl of ham ramen, from boiling the water to the last topping.</p>
+      <ul class="controls">
+        <li><b>Crank</b> chops, pours and stirs</li>
+        <li><b>Tilt</b> moves things and sets the size of each cut</li>
+      </ul>
+      <span class="status pixel">Play in your browser: coming soon</span>
+    </div>
+  </article>
+</section>
+
+<script src="site.js"></script>
+</body>
+</html>
