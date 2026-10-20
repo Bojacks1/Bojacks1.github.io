@@ -213,3 +213,22 @@ footer { text-align: center; padding: 50px var(--pad) 70px; color: var(--ink-dim
 
 /* very short windows (a phone on its side, a small laptop): the "Scroll" hint would sit on the buttons, so drop it */
 @media (max-height: 700px) { .scroll-hint { display: none; } }
+
+/* ---- photo albums: a grid of thumbnails on a project page, and the full-screen lightbox ---- */
+.gallery { margin-top: 44px; }
+.gallery-count { font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 18px; }
+/* CSS columns make a "masonry" layout: tall and wide photos sit together without gaps */
+.gallery-grid { columns: 3 260px; column-gap: 12px; }
+.gshot { display: block; width: 100%; margin: 0 0 12px; padding: 0; border: 0; background: #000; cursor: zoom-in; break-inside: avoid; overflow: hidden; }
+.gshot img { width: 100%; height: auto; transition: transform .5s ease, opacity .3s; filter: saturate(.95); }
+.gshot:hover img { transform: scale(1.04); filter: saturate(1.1); }
+.gshot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(5,5,6,.96); display: grid; place-items: center; }
+.lightbox img { max-width: min(94vw, 1700px); max-height: 88vh; object-fit: contain; box-shadow: 0 20px 80px rgba(0,0,0,.7); }
+.lightbox button { position: absolute; background: none; border: 0; color: var(--ink); cursor: pointer; font-size: 2.6rem; line-height: 1; padding: 14px 20px; opacity: .75; transition: opacity .2s; }
+.lightbox button:hover { opacity: 1; }
+.lb-close { top: 8px; right: 12px; font-size: 2.2rem; }
+.lb-prev { left: 4px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 4px; top: 50%; transform: translateY(-50%); }
+.lb-count { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; font-size: .72rem; letter-spacing: .3em; color: var(--ink-dim); }
+@media (max-width: 700px) { .gallery-grid { columns: 2 140px; column-gap: 8px; } .gshot { margin-bottom: 8px; } }

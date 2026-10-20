@@ -32,6 +32,12 @@ function placeholderBackground(title) {
           radial-gradient(110% 90% at 85% 95%, hsl(${b} 55% 20% / .9), transparent 62%), #111214`;
 }
 
+/** The cover picture of a project's photo album (a small thumbnail), or "" when it has no album. */
+function albumCoverUrl(p) {
+  const album = p.album && typeof ALBUMS !== "undefined" ? ALBUMS[p.album] : null;
+  return album ? `${album.cover}-t.jpg` : "";
+}
+
 // ---- the home page's work grid -------------------------------------------------------------------
 
 /** Builds one project card (a link to the project's own page). */
@@ -40,7 +46,7 @@ function projectCard(p) {
   a.className = "card";
   a.href = `project.html?p=${p.slug}`;
   a.dataset.category = p.category;
-  const thumb = thumbnailUrl(p.video);
+  const thumb = thumbnailUrl(p.video) || albumCoverUrl(p); // the video's still, else the album's cover
   a.innerHTML = `
     <div class="card-frame" style="background:${thumb ? "#000" : placeholderBackground(p.title)}">
       ${thumb ? `<img src="${thumb}" alt="" loading="lazy" onerror="this.src=this.src.replace('maxresdefault','hqdefault')">` : `<span class="card-soon">coming soon</span>`}
