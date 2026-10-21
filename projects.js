@@ -19,6 +19,8 @@
  */
 const PROJECTS = [
   // 2026
+  { slug: "nyc", title: "NYC", year: 2026, category: "Documentary", blurb: "", video: "cvNAHIbaSvg", role: "" },
+  { slug: "la-la-chi", title: "LA LA CHI", year: 2026, category: "Documentary", blurb: "", video: "O0kfFpcFIvs", role: "" },
   { slug: "pre-approved", title: "Pre-Approved", year: 2026, category: "Film", blurb: "A sitcom.", video: "y9TDN1bYtCk", role: "" },
   { slug: "loves-lost-is-found", title: "Love's Lost is Found", year: 2026, category: "Film", blurb: "", video: "a-2NpW62KB8", role: "" },
   { slug: "checkmate", title: "Checkmate", year: 2026, category: "Film", blurb: "", video: "juiajXo8lbs", role: "" },
