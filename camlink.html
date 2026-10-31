@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>Playdate Cam Link: Boraq Abdulmajeed</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Playdate Cam Link: your camera on your Playdate">
+<meta property="og:description" content="A free tool that shows your Mac's camera, a webcam or a tiny keychain camera on a Playdate, live, over the USB cable.">
+<meta property="og:image" content="https://bojacks1.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="A free tool that shows your Mac's camera, a webcam or a tiny keychain camera on a Playdate, live, over the USB cable.">
+<style>
+  .cl-card { image-rendering: pixelated; width: 100%; max-width: 700px; border-radius: 6px; margin: 28px 0 8px; background: #fff; }
+  .cl-steps { list-style: none; counter-reset: step; display: grid; gap: 16px; margin: 26px 0 8px; max-width: 40em; }
+  .cl-steps li { counter-increment: step; padding-left: 52px; position: relative; color: #cfcac0; }
+  .cl-steps li::before { content: counter(step); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--accent); font-family: var(--serif); font-size: 1.2rem; }
+  .cl-steps b { color: var(--ink); font-weight: 500; }
+  .cl-downloads { display: flex; flex-wrap: wrap; gap: 14px; margin: 26px 0 10px; }
+  .cl-downloads a { display: block; padding: 14px 22px; border: 1px solid var(--line); transition: border-color .2s, color .2s; }
+  .cl-downloads a:hover { border-color: var(--accent); color: var(--accent); }
+  .cl-downloads small { display: block; color: var(--ink-dim); font-size: .75rem; margin-top: 3px; }
+  .cl-faq h3 { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; margin: 30px 0 8px; }
+  .cl-faq p, .cl-prose p { color: #cfcac0; max-width: 40em; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="index.html">Boraq Abdulmajeed</a>
+  <nav><ul>
+    <li><a href="index.html#work" data-n="work">Work</a></li>
+    <li><a href="games.html" data-n="games" class="here">Games</a></li>
+    <li><a href="about.html" data-n="about">About</a></li>
+    <li><a href="about.html#contact">Contact</a></li>
+  </ul></nav>
+</header>
+
+<section class="block" style="padding-top:150px">
+  <p class="eyebrow">Free tool</p>
+  <h2 class="title">Playdate Cam Link</h2>
+  <div class="cl-prose">
+    <p style="margin-top:18px">Show a live camera picture on your Playdate. Plug the Playdate into your Mac with its USB cable, press Start, and you are looking through your camera in black and white dots.</p>
+    <p>It works with the camera built into your Mac, a USB webcam, or a tiny keychain camera such as the Kodak Charmera.</p>
+  </div>
+  <img class="cl-card" src="camlink-card.png" alt="Cam Viewfinder's launcher card: a black cat in a camera viewfinder with corner marks, next to the words Cam Viewfinder, live view, and a REC timecode">
+  <img class="cl-card" src="camlink-example.png" alt="An example of the 1-bit picture: Beaumont Tower in black and white dots">
+  <p class="status">An example of the 1-bit look, made from a still photo with the same dithering.</p>
+
+  <div class="cl-downloads">
+    <a href="PlaydateCamLink-Mac.zip" download>Download for Mac<small>Playdate Cam Link.app, about 0.4 MB, macOS 14 or newer</small></a>
+    <a href="CamViewfinder-Playdate.zip" download>Download for Playdate<small>CamViewfinder.pdx, about 0.2 MB</small></a>
+  </div>
+  <p class="status">Version 1.0</p>
+
+  <h3 style="font-family:var(--serif);font-weight:400;font-size:2rem;margin-top:48px">How to set it up</h3>
+  <ol class="cl-steps">
+    <li><b>Put the app on your Playdate.</b> Turn the Playdate on, then open Settings, System, and choose Reboot to Data Disk. It shows up on your Mac like a USB drive. Copy <b>CamViewfinder.pdx</b> (unzip the download first) into its <b>Games</b> folder, eject it, and press a button to restart the Playdate. Cam Viewfinder now appears in your games.</li>
+    <li><b>Open Cam Viewfinder on the Playdate.</b> It shows a screen that says "On your Mac, open Playdate Cam Link and press Start."</li>
+    <li><b>Plug the Playdate into your Mac</b> with its USB cable.</li>
+    <li><b>Open Playdate Cam Link on your Mac</b> (unzip it and drag it to Applications). The first time, macOS asks whether Playdate Cam Link may use the camera: choose OK.</li>
+    <li><b>Pick your camera and press Start.</b> Your picture appears on the Playdate.</li>
+  </ol>
+
+  <div class="cl-faq">
+    <h3>The Mac says it cannot verify the app</h3>
+    <p>Playdate Cam Link is a small hobby project that is not (yet) signed with a paid Apple developer account, so macOS blocks it the first time. <b>Open Playdate Cam Link once</b> and close the warning. Then open <b>System Settings</b>, go to <b>Privacy &amp; Security</b>, scroll down and choose <b>Open Anyway</b>. You only do this once. If you would rather not, you can skip it: the app does nothing except read the camera you choose and talk to the Playdate over the cable.</p>
+    <h3>The picture is black</h3>
+    <p>The lens may be covered, or the room may be very dark. A Kodak Charmera also needs its lens to see some light. Try pointing it at a window.</p>
+    <h3>The Playdate is not found</h3>
+    <p>Make sure the Playdate is on and awake, Cam Viewfinder is open on it, and it is <b>not</b> in Data Disk mode. Try a different USB cable (some cables only charge). Close other apps that talk to the Playdate, such as Mirror.</p>
+    <h3>The picture lags or looks chunky</h3>
+    <p>The USB cable can only carry so much. Choose <b>Half size (faster)</b>: the picture is chunkier but moves more smoothly.</p>
+    <h3>Is my picture sent anywhere?</h3>
+    <p>No. The picture travels only over the USB cable from your Mac to your Playdate. Nothing is saved, uploaded or sent anywhere else, and neither app has any network code at all.</p>
+    <h3>Windows? Other Playdate apps?</h3>
+    <p>Playdate Cam Link works on Mac only for now. I may add Windows later.</p>
+  </div>
+
+  <p style="margin-top:36px;color:var(--ink-dim);font-size:.9rem">Made by Boraq Abdulmajeed. Free to use. Playdate is a trademark of Panic Inc.; this project is not made or endorsed by Panic. Questions or a bug? <a href="about.html#contact" style="border-bottom:1px solid var(--line)">Get in touch</a>.</p>
+</section>
+<footer>© 2026 Boraq Abdulmajeed</footer>
+<script src="site.js"></script>
+</body>
+</html>
