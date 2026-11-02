@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>Crank Chat: Boraq Abdulmajeed</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Crank Chat: message from your Playdate">
+<meta property="og:description" content="Send and receive Telegram messages on a Playdate, with the crank-driven keyboard and quick replies.">
+<meta property="og:image" content="https://bojacks1.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Send and receive Telegram messages on a Playdate, with the crank-driven keyboard and quick replies.">
+<style>
+  .cl-card { image-rendering: pixelated; width: 100%; max-width: 700px; border-radius: 6px; margin: 28px 0 8px; background: #fff; }
+  .cl-steps { list-style: none; counter-reset: step; display: grid; gap: 16px; margin: 26px 0 8px; max-width: 40em; }
+  .cl-steps li { counter-increment: step; padding-left: 52px; position: relative; color: #cfcac0; }
+  .cl-steps li::before { content: counter(step); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--accent); font-family: var(--serif); font-size: 1.2rem; }
+  .cl-steps b { color: var(--ink); font-weight: 500; }
+  .cl-downloads { display: flex; flex-wrap: wrap; gap: 14px; margin: 26px 0 10px; }
+  .cl-downloads a { display: block; padding: 14px 22px; border: 1px solid var(--line); transition: border-color .2s, color .2s; }
+  .cl-downloads a:hover { border-color: var(--accent); color: var(--accent); }
+  .cl-downloads small { display: block; color: var(--ink-dim); font-size: .75rem; margin-top: 3px; }
+  .cl-faq h3 { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; margin: 30px 0 8px; }
+  .cl-faq p, .cl-prose p { color: #cfcac0; max-width: 40em; margin-bottom: 12px; }
+  .shots { display: flex; flex-wrap: wrap; gap: 14px; margin: 28px 0 8px; }
+  .shots img { image-rendering: pixelated; width: 100%; max-width: 400px; border-radius: 6px; background: #fff; }
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="index.html">Boraq Abdulmajeed</a>
+  <nav><ul>
+    <li><a href="index.html#work" data-n="work">Work</a></li>
+    <li><a href="games.html" data-n="games" class="here">Games</a></li>
+    <li><a href="about.html" data-n="about">About</a></li>
+    <li><a href="about.html#contact">Contact</a></li>
+  </ul></nav>
+</header>
+
+<section class="block" style="padding-top:150px">
+  <p class="eyebrow">An experiment</p>
+  <h2 class="title">Crank Chat</h2>
+  <div class="cl-prose">
+    <p style="margin-top:18px">Could you text from a Playdate? I built this to find out, and yes, you can. It works on a real Playdate, with messages going both ways. It is also slow, because every letter is picked with the crank, so treat it as a fun proof of concept, not an everyday messenger.</p>
+    <p> Crank Chat shows your conversations as chat bubbles, uses the Playdate's crank keyboard to type, and has a list of quick replies for when you do not feel like turning the crank for every letter.</p>
+    <p>Messages travel through a tiny relay program on your own computer, which talks to a Telegram bot you make yourself. That keeps your secrets off the Playdate.</p>
+  </div>
+  <div class="shots">
+    <img src="crank-chat-list.png" alt="Crank Chat's chat list with a new message banner">
+    <img src="crank-chat-thread.png" alt="A conversation in Crank Chat with message bubbles and the button guide">
+  </div>
+
+  <div class="cl-downloads">
+    <a href="CrankChat-Playdate.zip" download>Playdate app<small>CrankChat.pdx, about 50 KB</small></a>
+    <a href="CrankChat-Relay.zip" download>Relay for your computer<small>Python, no extra packages</small></a>
+  </div>
+  <p class="status">Version 0.1 · early release</p>
+
+  <h3 style="font-family:var(--serif);font-weight:400;font-size:2rem;margin-top:48px">How to set it up</h3>
+  <ol class="cl-steps">
+    <li><b>Start the relay.</b> Unzip the relay download and open Terminal (Applications › Utilities). Type <b>python3</b> and a space, drag <b>relay.py</b> onto the Terminal window, and press Return. If your Mac offers to install developer tools, click Install, then try again. The relay prints an address and a secret key. Leave the window open.</li>
+    <li><b>Put the app on your Playdate</b> (Reboot to Data Disk, copy <b>CrankChat.pdx</b> into Games).</li>
+    <li><b>Open Crank Chat</b> on the same Wi-Fi, press A, and type the address and the key with the crank keyboard. A demo friend, Braq-bot, answers your first message.</li>
+    <li><b>Add Telegram or phone texts.</b> README.txt in the relay download walks through making your own Telegram bot, turning on phone texts on a Mac, and what to do if you see an error.</li>
+  </ol>
+
+  <div class="cl-faq">
+    <h3>Who can message me?</h3>
+    <p>Only the Telegram numbers you put in the allow list. Anyone else who finds your bot is ignored.</p>
+    <h3>Does it work with WhatsApp or normal text messages?</h3>
+    <p>WhatsApp does not allow this kind of app. On a Mac, the relay can also send and read texts through the Messages app for people you add by phone number; that part only works on a Mac. It needs Automation permission to send and Full Disk Access to read incoming texts, and it reads only the numbers you add. Regular SMS also needs Text Message Forwarding on your iPhone.</p>
+    <h3>What is not finished?</h3>
+    <p>It works on a real Playdate with Telegram and with phone texts, but it has had little everyday use. Your computer has to keep the relay running, and the Playdate has to be on the same Wi-Fi. Messages are not end-to-end encrypted, and the key travels over your home Wi-Fi unencrypted, so use it for casual chat.</p>
+  </div>
+  <p style="margin-top:36px;color:var(--ink-dim);font-size:.9rem">Made by Boraq Abdulmajeed. Free to use. Playdate is a trademark of Panic Inc.; this project is not made or endorsed by Panic. Questions or a bug? <a href="about.html#contact" style="border-bottom:1px solid var(--line)">Get in touch</a>.</p>
+</section>
+<footer>© 2026 Boraq Abdulmajeed</footer>
+<script src="site.js"></script>
+</body>
+</html>
