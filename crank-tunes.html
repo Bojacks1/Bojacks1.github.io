@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>Crank Tunes: Boraq Abdulmajeed</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Crank Tunes: your music on your Playdate">
+<meta property="og:description" content="Play your own songs from your computer on a Playdate over Wi-Fi, and remote-control Spotify or other music apps with the crank.">
+<meta property="og:image" content="https://bojacks1.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Play your own songs from your computer on a Playdate over Wi-Fi, and remote-control Spotify or other music apps with the crank.">
+<style>
+  .cl-card { image-rendering: pixelated; width: 100%; max-width: 700px; border-radius: 6px; margin: 28px 0 8px; background: #fff; }
+  .cl-steps { list-style: none; counter-reset: step; display: grid; gap: 16px; margin: 26px 0 8px; max-width: 40em; }
+  .cl-steps li { counter-increment: step; padding-left: 52px; position: relative; color: #cfcac0; }
+  .cl-steps li::before { content: counter(step); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--accent); font-family: var(--serif); font-size: 1.2rem; }
+  .cl-steps b { color: var(--ink); font-weight: 500; }
+  .cl-downloads { display: flex; flex-wrap: wrap; gap: 14px; margin: 26px 0 10px; }
+  .cl-downloads a { display: block; padding: 14px 22px; border: 1px solid var(--line); transition: border-color .2s, color .2s; }
+  .cl-downloads a:hover { border-color: var(--accent); color: var(--accent); }
+  .cl-downloads small { display: block; color: var(--ink-dim); font-size: .75rem; margin-top: 3px; }
+  .cl-faq h3 { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; margin: 30px 0 8px; }
+  .cl-faq p, .cl-prose p { color: #cfcac0; max-width: 40em; margin-bottom: 12px; }
+  .shots { display: flex; flex-wrap: wrap; gap: 14px; margin: 28px 0 8px; }
+  .shots img { image-rendering: pixelated; width: 100%; max-width: 400px; border-radius: 6px; background: #fff; }
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="index.html">Boraq Abdulmajeed</a>
+  <nav><ul>
+    <li><a href="index.html#work" data-n="work">Work</a></li>
+    <li><a href="games.html" data-n="games" class="here">Games</a></li>
+    <li><a href="about.html" data-n="about">About</a></li>
+    <li><a href="about.html#contact">Contact</a></li>
+  </ul></nav>
+</header>
+
+<section class="block" style="padding-top:150px">
+  <p class="eyebrow">Free tool</p>
+  <h2 class="title">Crank Tunes</h2>
+  <div class="cl-prose">
+    <p style="margin-top:18px">Your own music on your Playdate. A small server on your Mac or Linux computer streams the songs in a folder over Wi-Fi. The Playdate shows the list with each song's real cover art in 1-bit, plays them, and the crank turns the volume.</p>
+    <p>It can also be a remote control: it shows what Spotify (or another music app) is playing on the computer, with the album cover, and lets you pause, skip and change the volume from the Playdate. Press Ⓑ to fill the screen with the cover.</p>
+  </div>
+  <div class="shots">
+    <img src="crank-tunes-library.png" alt="The Crank Tunes library: a list of songs, with the playing song's cover beside it">
+    <img src="crank-tunes-remote.png" alt="Crank Tunes as a remote for Spotify on the computer: the song, its cover, a progress bar and the volume">
+    <img src="crank-tunes-bigcover.png" alt="The big cover page: the album cover filling most of the Playdate's screen, with the song beside it">
+  </div>
+  <p style="color:var(--ink-dim);font-size:.85rem;max-width:40em">The songs and cover in these pictures are made up for the screenshots; the cover is a photo of Beaumont Tower.</p>
+
+  <div class="cl-downloads">
+    <a href="CrankTunes-Playdate.zip" download>Playdate app<small>CrankTunes.pdx, about 0.1 MB</small></a>
+    <a href="PlaydateLibrary-Mac.zip" download>Mac app (easiest on a Mac)<small>Playdate Library.app, about 0.9 MB</small></a>
+    <a href="CrankTunes-Server.zip" download>Server for Linux<small>Python, with an installer</small></a>
+  </div>
+  <p class="status">Version 1.0 · first release</p>
+
+  <h3 style="font-family:var(--serif);font-weight:400;font-size:2rem;margin-top:48px">How to set it up</h3>
+  <ol class="cl-steps">
+    <li><b>Start the server.</b> On a Mac, unzip and open <b>Playdate Library</b>, drag some songs in and press Start. (If the Mac offers to install "command line developer tools", say yes: that gives it Python.) It shows its address, such as <b>192.168.1.40:8000</b>. On Linux, unzip the server download and follow <b>LINUX_SERVER.md</b>; it gives you an address and a secret key.</li>
+    <li><b>Put the app on your Playdate.</b> Either upload <b>CrankTunes-Playdate.zip</b> at play.date/account/sideload, or reboot to Data Disk (Settings, System), copy <b>CrankTunes.pdx</b> into <b>Games</b> and eject. Open Crank Tunes once: it says "Almost there". That creates its data folder.</li>
+    <li><b>Tell the app where the server is.</b> Reboot to Data Disk again. In the <b>Data</b> folder, open the folder whose name ends in <b>com.braq.tunes</b> and put a plain text file called <b>server.txt</b> in it, holding one line: the address (on Linux, the address, a space, then the key). In TextEdit, choose Format, Make Plain Text before saving.</li>
+    <li><b>Join the same Wi-Fi.</b> The Playdate and the computer must be on the same network. Open Crank Tunes and allow the connection when the Playdate asks. In the list the crank scrolls and Ⓐ plays; while a song plays, the crank sets the volume, ⬅️ ➡️ skip and Ⓑ goes back to the list. The Playdate's menu has <b>mode</b>, which switches between your music and the remote.</li>
+  </ol>
+
+  <div class="cl-faq">
+    <h3>Can it play Spotify songs on the Playdate?</h3>
+    <p>No. Spotify does not allow its audio to be sent to other devices, and I did not want to break its rules. What works is the remote control: Crank Tunes shows and controls what Spotify is playing on your computer, while the sound comes out of the computer.</p>
+    <h3>Which songs can I play?</h3>
+    <p>Your own files in the folder you choose. MP3s play as they are. If ffmpeg is installed on the computer, every song is also shrunk to about 96 kbps, which the Playdate's slow Wi-Fi handles more easily, and other formats (M4A, FLAC and more) work too. Only use music you own or have the right to use.</p>
+    <h3>Who else can reach it?</h3>
+    <p>Anyone on the same Wi-Fi who knows the address could see your song list and pause your music, so use it on a network you trust, like your home Wi-Fi. The Linux server asks for a secret key on every request.</p>
+    <h3>Can I use it away from home?</h3>
+    <p>The Linux server can sit behind a Cloudflare Tunnel, which gives it a secure <b>https://</b> address to put in server.txt. LINUX_SERVER.md explains how. Keep the key on if you do this.</p>
+    <h3>The Mac says it cannot verify the app</h3>
+    <p>The Mac app is not signed with a paid Apple developer account. Open it once and close the warning. Then open <b>System Settings</b>, go to <b>Privacy &amp; Security</b>, scroll down and choose <b>Open Anyway</b>. You only do this once.</p>
+    <h3>What has been tested?</h3>
+    <p>A real Playdate with a Mac server and with Spotify on the Mac, the Linux installer on a real Ubuntu laptop, and the Playdate's Simulator. Arabic song titles are shaped and shown right to left.</p>
+  </div>
+  <p style="margin-top:36px;color:var(--ink-dim);font-size:.9rem">Made by Boraq Abdulmajeed. Free to use. Playdate is a trademark of Panic Inc.; this project is not made or endorsed by Panic. Questions or a bug? <a href="about.html#contact" style="border-bottom:1px solid var(--line)">Get in touch</a>.</p>
+</section>
+<footer>© 2026 Boraq Abdulmajeed</footer>
+<script src="site.js"></script>
+</body>
+</html>
