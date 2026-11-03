@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>CRANKBLADE: Boraq Abdulmajeed</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="CRANKBLADE: a samurai duel game for Playdate">
+<meta property="og:description" content="A one-on-one samurai duel where the crank is your sword. Six opponents, a story of revenge, free for Playdate.">
+<meta property="og:image" content="https://bojacks1.github.io/crankblade-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="A one-on-one samurai duel where the crank is your sword. Six opponents, a story of revenge, free for Playdate.">
+<style>
+  /* the trailer: the Playdate picture inside it is already letterboxed on the dark Playdate colour, so the frame only needs a soft edge */
+  .cb-trailer { width: 100%; max-width: 960px; aspect-ratio: 16 / 9; display: block; margin: 30px 0 8px; border-radius: 6px; background: #312f28; }
+  .cl-steps { list-style: none; counter-reset: step; display: grid; gap: 16px; margin: 26px 0 8px; max-width: 40em; }
+  .cl-steps li { counter-increment: step; padding-left: 52px; position: relative; color: #cfcac0; }
+  .cl-steps li::before { content: counter(step); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--accent); font-family: var(--serif); font-size: 1.2rem; }
+  .cl-steps b { color: var(--ink); font-weight: 500; }
+  .cl-downloads { display: flex; flex-wrap: wrap; gap: 14px; margin: 26px 0 10px; }
+  .cl-downloads a { display: block; padding: 14px 22px; border: 1px solid var(--line); transition: border-color .2s, color .2s; }
+  .cl-downloads a:hover { border-color: var(--accent); color: var(--accent); }
+  .cl-downloads small { display: block; color: var(--ink-dim); font-size: .75rem; margin-top: 3px; }
+  .cl-faq h3 { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; margin: 30px 0 8px; }
+  .cl-faq p, .cl-prose p { color: #cfcac0; max-width: 40em; margin-bottom: 12px; }
+  .cl-prose ul { color: #cfcac0; max-width: 40em; margin: 0 0 12px 1.2em; display: grid; gap: 6px; }
+  .cl-prose b { color: var(--ink); font-weight: 500; }
+  .shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin: 28px 0 8px; max-width: 1240px; }
+  .shots img { image-rendering: pixelated; width: 100%; border-radius: 6px; }
+  .cb-h3 { font-family: var(--serif); font-weight: 400; font-size: 2rem; margin-top: 48px; }
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="index.html">Boraq Abdulmajeed</a>
+  <nav><ul>
+    <li><a href="index.html#work" data-n="work">Work</a></li>
+    <li><a href="games.html" data-n="games" class="here">Games</a></li>
+    <li><a href="about.html" data-n="about">About</a></li>
+    <li><a href="about.html#contact">Contact</a></li>
+  </ul></nav>
+</header>
+
+<section class="block" style="padding-top:150px">
+  <p class="eyebrow">Free game for Playdate</p>
+  <h2 class="title">CRANKBLADE</h2>
+  <div class="cl-prose">
+    <p style="margin-top:18px">A one-on-one samurai duel where the crank is your sword. Turn it to guard high, middle or low, read your opponent, and parry or strike with the buttons.</p>
+  </div>
+
+  <video class="cb-trailer" controls preload="metadata" playsinline poster="crankblade-poster.jpg">
+    <source src="crankblade-trailer.mp4" type="video/mp4">
+    Your browser cannot play this video. <a href="https://youtu.be/NLjqtnUTWzw">Watch the trailer on YouTube</a>.
+  </video>
+  <p class="status">Trailer &nbsp;·&nbsp; <a href="https://youtu.be/NLjqtnUTWzw" style="border-bottom:1px solid var(--line)">Watch on YouTube</a></p>
+
+  <div class="cl-downloads">
+    <a href="CRANKBLADE.pdx.zip" download>Download for Playdate<small>CRANKBLADE.pdx, about 7 MB</small></a>
+    <a href="https://boraqabdulmajeed.itch.io/crankblade">Get it on itch.io<small>Free, or name your own price</small></a>
+    <a href="https://boraqabdulmajeed.itch.io/crankblade/devlog/1746939/crankblade-a-playdate-game">How I made it<small>The devlog</small></a>
+  </div>
+  <p class="status">Version 1.0</p>
+
+  <h3 class="cb-h3">The story</h3>
+  <div class="cl-prose">
+    <p>Itakao is the son of Lord Ikagawa, ruler and head of the Kurosaka clan. He spends his days away from the fortress, helping the people who live around it, until a retainer runs to find him with news: his father has been killed by a band of ronin.</p>
+    <p>Now lord himself, Itakao takes the road to find the men who did it. Each duel ends with a few last words, and some of them leave him clues about who sent the ronin.</p>
+  </div>
+
+  <div class="shots">
+    <img src="crankblade-memory.png" alt="Itakao and Lady Hiroca outside her house: &quot;Think of me as you do your son.&quot;">
+    <img src="crankblade-story.png" alt="The great hall of the castle, where Yoshi calls the clan's officials to attention">
+    <img src="crankblade-dash.png" alt="A perfect parry on the slopes of Mount Yotei: time slows and Itakao dashes through his opponent">
+    <img src="crankblade-village.png" alt="A duel in a village street at dusk">
+    <img src="crankblade-bridge.png" alt="A duel on a bridge in the rain">
+    <img src="crankblade-winter.png" alt="A duel on a snowy field under the moon">
+  </div>
+
+  <h3 class="cb-h3">How a duel works</h3>
+  <div class="cl-prose">
+    <p>A sword covers its own zone, so the rule is simple: <b>hit where their sword isn't.</b></p>
+    <ul>
+      <li><b>The crank</b> is your sword arm: up guards high, forward guards the middle, down guards low.</li>
+      <li><b>Ⓑ parries.</b> Watch your opponent wind up, put your sword in the zone he is attacking and press Ⓑ just before the blow lands. Hold the right guard without pressing anything and you simply block.</li>
+      <li><b>Ⓐ strikes.</b> After a parry his guard is knocked aside for a moment: strike where it is open.</li>
+      <li><b>A perfect parry,</b> at the very last instant, slows time down. Strike then and you dash straight through him.</li>
+      <li>Both of you can take three wounds. Swinging wildly gets read and punished.</li>
+    </ul>
+  </div>
+
+  <h3 class="cb-h3">What's in it</h3>
+  <div class="cl-prose">
+    <ul>
+      <li>Six opponents, each with their own fighting style, stage and story</li>
+      <li>Story scenes between the duels, told in short dialogue and memories</li>
+      <li>A tutorial for the basics, offered the first time you play</li>
+      <li>Duels mode (⬇️ on the title screen) to fight any of the six opponents without the story</li>
+      <li>Three difficulties, a left- or right-handed crank stance and crank sensitivity, all in the Playdate's menu</li>
+      <li>An original score and sound effects</li>
+    </ul>
+  </div>
+
+  <h3 class="cb-h3">How to install it</h3>
+  <ol class="cl-steps">
+    <li><b>Download CRANKBLADE.pdx.zip</b> above.</li>
+    <li><b>Sideload it.</b> Sign in at <b>play.date/account/sideload</b> and upload the zip; it arrives on your Playdate the next time it checks for games (Settings, Games). Or reboot the Playdate to Data Disk (Settings, System), unzip, copy <b>CRANKBLADE.pdx</b> into the <b>Games</b> folder and eject.</li>
+    <li><b>Play.</b> Ⓐ on the title starts the story; ⬇️ opens Duels mode.</li>
+  </ol>
+
+  <div class="cl-faq">
+    <h3>It is too hard</h3>
+    <p>Open the Playdate's menu during a duel and set <b>difficulty</b> to easy: your opponents give you more time to read them and longer parry windows. The tutorial on the title screen (Ⓑ) teaches the basics again.</p>
+    <h3>I hold the crank the other way</h3>
+    <p>Set <b>stance</b> to left in the Playdate's menu. The sword then points forward when the crank handle points toward you.</p>
+  </div>
+  <p style="margin-top:36px;color:var(--ink-dim);font-size:.9rem">Made by Boraq Abdulmajeed. Free to play. Playdate is a trademark of Panic Inc.; this game is not made or endorsed by Panic. Questions or a bug? <a href="about.html#contact" style="border-bottom:1px solid var(--line)">Get in touch</a>.</p>
+</section>
+<footer>© 2026 Boraq Abdulmajeed</footer>
+<script src="site.js"></script>
+</body>
+</html>
