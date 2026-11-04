@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>Crank FM: Boraq Abdulmajeed</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Crank FM: internet radio tuned with the Playdate's crank">
+<meta property="og:description" content="Internet radio on the Playdate, tuned with the crank: static between stations, a station crackling into focus as you find it.">
+<meta property="og:image" content="https://bojacks1.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Internet radio on the Playdate, tuned with the crank: static between stations, a station crackling into focus as you find it.">
+<style>
+  .cl-card { image-rendering: pixelated; width: 100%; max-width: 700px; border-radius: 6px; margin: 28px 0 8px; background: #fff; }
+  .cl-steps { list-style: none; counter-reset: step; display: grid; gap: 16px; margin: 26px 0 8px; max-width: 40em; }
+  .cl-steps li { counter-increment: step; padding-left: 52px; position: relative; color: #cfcac0; }
+  .cl-steps li::before { content: counter(step); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--accent); font-family: var(--serif); font-size: 1.2rem; }
+  .cl-steps b { color: var(--ink); font-weight: 500; }
+  .cl-downloads { display: flex; flex-wrap: wrap; gap: 14px; margin: 26px 0 10px; }
+  .cl-downloads a { display: block; padding: 14px 22px; border: 1px solid var(--line); transition: border-color .2s, color .2s; }
+  .cl-downloads a:hover { border-color: var(--accent); color: var(--accent); }
+  .cl-downloads small { display: block; color: var(--ink-dim); font-size: .75rem; margin-top: 3px; }
+  .cl-faq h3 { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; margin: 30px 0 8px; }
+  .cl-faq p, .cl-prose p { color: #cfcac0; max-width: 40em; margin-bottom: 12px; }
+  .shots { display: flex; flex-wrap: wrap; gap: 14px; margin: 28px 0 8px; }
+  .shots img { image-rendering: pixelated; width: 100%; max-width: 400px; border-radius: 6px; background: #fff; }
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="index.html">Boraq Abdulmajeed</a>
+  <nav><ul>
+    <li><a href="index.html#work" data-n="work">Work</a></li>
+    <li><a href="games.html" data-n="games" class="here">Games</a></li>
+    <li><a href="about.html" data-n="about">About</a></li>
+    <li><a href="about.html#contact">Contact</a></li>
+  </ul></nav>
+</header>
+
+<section class="block" style="padding-top:150px">
+  <p class="eyebrow">Playdate app &nbsp;·&nbsp; source code only</p>
+  <h2 class="title">Crank FM</h2>
+  <div class="cl-prose">
+    <p style="margin-top:18px">Internet radio for the Playdate, tuned with the crank like an old tabletop radio. Turn the dial and you hear static; come close to a station and its music breaks through, muffled and wavering, until it settles in clear as the needle reaches it.</p>
+  </div>
+  <div class="shots">
+    <img src="crankfm-launch.png" alt="Crank FM's start screen: Beaumont Tower beside the name and a tuning dial">
+    <img src="crankfm-tuned.png" alt="The radio face: a dial from 88 to 108, the station's name and the song playing, and six band keys">
+  </div>
+
+  <h3 style="font-family:var(--serif);font-weight:400;font-size:2rem;margin-top:48px">What it does</h3>
+  <div class="cl-prose">
+    <p>A dial from 88 to 108, with <b>six bands</b> of six stations: chill, space, beats, lounge, rock and pop, and the odd ones.</p>
+    <p>The <b>crank</b> turns the dial. ⬅️ and ➡️ jump to the next station, Ⓑ changes band, ⬆️ and ⬇️ set the volume.</p>
+    <p>The name of the song playing, signal bars, a speaker grille that pulses with the music, and a lamp that glows when you are tuned in.</p>
+    <p>Real stereo in headphones; on the speaker, a mono mix at the same loudness.</p>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-weight:400;font-size:2rem;margin-top:48px">How it works</h3>
+  <div class="cl-prose">
+    <p>It is written in C, because the Playdate's simpler Lua tools cannot play sound from the internet. The app streams each station as MP3 over Wi-Fi and decodes it on the Playdate itself. The static, the muffling and the warble are mixed in live, depending on how far the dial is from the station, so finding a station sounds the way it does on a real radio.</p>
+    <p>The Playdate's Wi-Fi is only just fast enough for a 128 kbps stream, so the app keeps a buffer of a few seconds, and makes it longer by itself if the signal gets weak. A limiter keeps loud songs from crackling on the small speaker.</p>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-weight:400;font-size:2rem;margin-top:48px">Why you can't download it</h3>
+  <div class="cl-prose">
+    <p>Every station in Crank FM is from <a href="https://somafm.com" style="border-bottom:1px solid var(--line)">SomaFM</a>, a listener-supported internet radio station that has been on the air since 2000. Their terms say they cannot allow third-party apps to use their streams, even free ones, because of how their music is licensed. I asked, and I do not have their permission, so Crank FM stays on my own Playdate.</p>
+    <p>If you would like to hear these stations, listen to them at somafm.com, and support them if you can.</p>
+    <p>Maybe one day it can be available: if SomaFM ever allows it, or in a version where you add your own stations.</p>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-weight:400;font-size:2rem;margin-top:48px">The source code</h3>
+  <div class="cl-prose">
+    <p>The code is free for anyone who wants it (MIT licence). It is the whole radio (the dial, the static, the decoder, the buffer, the sound), with SomaFM's stations and name taken out: it builds and runs, and plays once you add stations whose owners allow it. <b>src/stations.h</b> explains what a station needs.</p>
+  </div>
+  <div class="cl-downloads">
+    <a href="CrankFM-source.zip" download>Source code<small>C, for the Playdate SDK, about 0.8 MB</small></a>
+  </div>
+  <p style="margin-top:36px;color:var(--ink-dim);font-size:.9rem">Made by Boraq Abdulmajeed and Nityaansh Parekh. Streams by SomaFM; MP3 decoding by minimp3 (public domain). The start-screen photo of Beaumont Tower is Boraq's own. Playdate is a trademark of Panic Inc.; this project is not made or endorsed by Panic or SomaFM.</p>
+</section>
+<footer>© 2026 Boraq Abdulmajeed</footer>
+<script src="site.js"></script>
+</body>
+</html>
